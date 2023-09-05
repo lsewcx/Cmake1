@@ -2,10 +2,7 @@
 //
 
 #include "../include/public.h"
-#include <opencv2/opencv.hpp>
-
-using namespace std;
-using namespace cv;
+#include "./opencv/opencv.cpp"
 
 struct Params
 {
@@ -15,24 +12,22 @@ struct Params
 
 Params params;
 Public publicname;
+Picture picture;
+Capture capture;
+std::string model_file_path = "../mobilenet-ssd/";
+
+
+
 
 int main()
 {
-    //VideoCapture cap;
-    //cap.open("C:/Users/lsewcx/Desktop/新项目.mp4");
-    //while (cap.isOpened())
-    //{
-    //    Mat frame;
-    //    cap.read(frame);
-    //    imshow("132",frame);
-    //    char key = waitKey(30); // 读取视频修改waitkey里面的参数可以修改图片播放的速度
-    //    if (key == 27)
-    //    {
-    //        break;
-    //    }
-    //}
-    //while (1)
-    //{
+
+    std::string filePath = "C:/Users/lsewcx/Desktop/新项目.mp4";
+    capture.open(filePath);
+    while (1)
+    {
+        Mat frame = capture.read();
+        imshow("1231", frame);
         //try
         //{
         //    std::ifstream config_is(publicname.get_jsonpath());
@@ -53,6 +48,11 @@ int main()
         //    std::cerr << "发生异常: " << e.what() << std::endl;
         //    //break;
         //}
-    //}
+         char key = waitKey(30); // 读取视频修改waitkey里面的参数可以修改图片播放的速度
+         if (key == 27)
+         {
+             break;
+         }
+    }
 }
 

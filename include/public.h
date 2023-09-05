@@ -7,7 +7,17 @@
 #include <fstream>
 #include"json.hpp"
 #include <exception>
+#include <opencv2/opencv.hpp>
+#include<filesystem>
+#include<thread>
+#include <chrono>
+#include <mutex>
+#include <opencv2/core/ocl.hpp>
+using namespace std;
 using json = nlohmann::json;
+using namespace cv;
+namespace fs = std::filesystem;
+
 class Public
 {
 private:

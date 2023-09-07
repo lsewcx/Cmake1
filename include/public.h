@@ -21,7 +21,7 @@ namespace fs = std::filesystem;
 class Public
 {
 private:
-	std::string jsonPath = "motion.json";
+	std::string jsonPath = "F:/Cmake/icar/config/motion.json";
 public:
 	std::string get_jsonpath() { return jsonPath; };
 };

@@ -16,18 +16,22 @@ project ("icar")
 # 将源代码添加到此项目的可执行文件。
 file(GLOB SOURCES "src/*.cpp")   #文件夹里面所有的cpp文件
 file(GLOB HEADERS "include/*.h") #文件夹里面所有的头文件
-
-
 add_executable(icar ${SOURCES} ${HEADERS})
 
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/config/motion.json ${CMAKE_CURRENT_BINARY_DIR}/motion.json COPYONLY)
 
-
+install(TARGETS ${PROJECT_NAME} 
+        RUNTIME DESTINATION ${CMAKE_INSTALL_PREFIX}
+        LIBRARY DESTINATION ${CMAKE_INSTALL_PREFIX}
+        ARCHIVE DESTINATION ${CMAKE_INSTALL_PREFIX})
 
 if(WIN32)
     set(OpenCV_DIR "F:/opencv/opencv/build")
 endif()    
 find_package(OpenCV REQUIRED)
+
+
+
 
 if(OpenCV_FOUND)
     target_include_directories(icar PUBLIC ${OpenCV_INCLUDE_DIRS})

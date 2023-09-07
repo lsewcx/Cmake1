@@ -1,0 +1,5 @@
+# ninja log v5
+3	747	7155348491144170	CMakeFiles/icar.dir/icar.cpp.obj	bafbaf49dfa4cdea
+4592	9723	7156787592855329	icar.exe	7a1cf1476cb1472d
+5	4591	7156787543856385	CMakeFiles/icar.dir/src/icar.cpp.obj	4be1e7042eeaa13f
+2	172	7157648703006363	build.ninja	e929324278f321ae
